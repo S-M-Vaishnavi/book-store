@@ -1,4 +1,6 @@
 import BookSingleCard from './BookSingleCard';
+import { PropTypes } from 'prop-types';
+
 
 const BooksCard = ({ books }) => {
   return (
@@ -8,6 +10,17 @@ const BooksCard = ({ books }) => {
       ))}
     </div>
   );
+};
+
+BooksCard.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      publishYear: PropTypes.number,
+      title: PropTypes.string,
+      author: PropTypes.string,
+    })
+  ).isRequired,
 };
 
 export default BooksCard;

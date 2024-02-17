@@ -1,6 +1,7 @@
 import { AiOutlineClose } from 'react-icons/ai';
 import { PiBookOpenTextLight } from 'react-icons/pi';
 import { BiUserCircle } from 'react-icons/bi';
+import { PropTypes } from 'prop-types';
 
 const BookModal = ({ book, onClose }) => {
   return (
@@ -42,4 +43,17 @@ const BookModal = ({ book, onClose }) => {
   );
 };
 
+BookModal.propTypes = {
+  book: PropTypes.shape({
+    publishYear: PropTypes.number,
+    title: PropTypes.string,
+    author: PropTypes.string,
+    _id: PropTypes.string.isRequired,
+  }),
+  onClose: PropTypes.func.isRequired,
+};
+
+
 export default BookModal;
+
+
